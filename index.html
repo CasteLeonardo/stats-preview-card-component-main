@@ -5,29 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- Styles -->
+
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <!-- Pre-connection to Google Fonts -->
+
+  <link 
+    rel="preconnect" 
+    href="https://fonts.googleapis.com"
+  >
+  <link 
+    rel="preconnect" 
+    href="https://fonts.gstatic.com" crossorigin
+  >
+
+  <!-- Lexend Deca and Inter -->
+
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shodlders:opsz,wght@10..72,100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap" 
+    rel="stylesheet"
+  >
   
   <title>Frontend Mentor | Stats preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Get insights that help your business grow.
+  <main>
+    <article class="stats-card">
+      
+      <picture class="stats-card__image">
+        <source
+          media="(min-width: 768px)"
+          srcset="./images/image-header-desktop.jpg"
+        >
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
+        <img 
+          src="./images/image-header-mobile.jpg" 
+          alt=""
+        >
+      </picture>
 
-  10k+ companies
-  314 templates
-  12m+ queries
+      <div class="stats-card__content">
+        <h1 class="stats-card__title">
+          Get <span class="stats-card__highlight">insights</span> that help your business grow.
+        </h1>
+
+
+        <p class="stats-card__description">
+          Discover the benefits of data analytics and make better decisions regarding revenue, 
+          customer experience, and overall efficiency.
+        </p>
+
+
+        <dl class="stats-card__stats">
+          <div class="stats-card__stat">
+            <dt class="stats-card__stat-value">10k+</dt>
+            <dd class="stats-card__stat-label">companies</dd>
+          </div>
+  
+          <div class="stats-card__stat">
+            <dt class="stats-card__stat-value">314</dt>
+            <dd class="stats-card__stat-label">templates</dd>
+          </div>
+  
+          <div class="stats-card__stat">
+            <dt class="stats-card__stat-value">12m+</dt>
+            <dd class="stats-card__stat-label">queries</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+  </main>
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/CasteLeonardo" target="_blank">CasteLeonardo</a>.
   </footer>
 </body>
 </html>
