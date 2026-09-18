@@ -1,0 +1,236 @@
+:root {
+
+    /* COLORS */
+    
+        /* Primary */
+        --Navy950: hsl(233, 47%, 7%); /* main background */
+        --Blue950: hsl(244, 37%, 16%); /* card background */
+        --Purple500: hsl(277, 64%, 61%);  /* highlight, image */
+        
+        /* Neutral */
+        --White1: hsl(0, 0%, 100%); /* main heading, stats */
+        --White2: hsla(0, 0%, 100%, 0.75); /* main paragraph */
+        --White3: hsla(0, 0%, 100%, 0.6); /* stat headings */
+    
+    /* TYPOGRAPHY */
+
+        /* Font Families */
+        --ff-inter: "Inter", sans-serif;
+        --ff-lexend-deca: "Lexend Deca", sans-serif;
+
+        /* Font weights */
+
+        --fw-regular: 400;
+        --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: var(--White2);
+    background-color: var(--Navy950);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin:  4rem 1rem;
+    padding: 0 1rem;
+
+    font-family: var(--ff-lexend-deca);
+
+}
+
+.stats-card {
+    width: 100%;
+    max-width: 23.438rem;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 0.5rem;
+
+    background-color: var(--Blue950);
+    overflow: hidden;
+}
+
+.stats-card__image {
+    position: relative;
+    display: block;
+    background-color: var(--Purple500);
+}
+
+.stats-card__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
+}
+
+.stats-card__content {
+    padding: 2.5rem 2rem 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.stats-card__title {
+    margin: 0 0 1rem;
+
+    font-size: 2rem;
+    line-height: 1.15;
+    font-family: var(--ff-inter);
+    font-weight: var(--fw-bold);
+
+    color: var(--White1);
+}
+
+.stats-card__highlight {
+    color: var(--Purple500);
+}
+
+.stats-card__description {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--White2);
+}
+
+.stats-card__stats {
+    margin: 0;
+    padding: 2.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stats-card__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stats-card__stat-value {
+    font-size: 1.65rem;
+    font-weight: bold;
+    font-family: var(--ff-inter);
+    text-transform: uppercase;
+
+    color: var(--White1);
+}
+
+.stats-card__stat-label {
+    margin: 0;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--White3);
+}
+
+.attribution { 
+    margin-bottom: 1rem;
+    font-size: 1rem; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+    text-decoration: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .stats-card__content {
+        padding: 2rem 2.5rem;
+    }
+
+    .stats-card__title {
+        font-size: 1.6rem;
+    }
+
+    .stats-card__stats {
+        padding: 2rem 2.5rem;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+        main {
+            padding: 0 2rem;
+
+        }
+
+        .stats-card {
+            max-width: 60rem; 
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "content image";
+        } 
+
+        .stats-card__image {
+            grid-area: image;
+            height: 100%;
+        }
+
+        .stats-card__image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stats-card__content {
+            grid-area: content;
+
+            height: 100%;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 4rem;
+
+        }
+
+        .stats-card__description {
+
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .stats-card__stats {
+            flex-direction: row;
+            gap: 2.5rem;
+            padding: 4.5rem 0 0 0;
+        }
+
+        .stats-card__stat-value {
+            font-size: 1.4rem;
+        }
+
+        .stats-card__stat-label {
+            font-size: 0.6rem;
+        }
+}
+
+
+
